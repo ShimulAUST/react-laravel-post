@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import AddPost from '../components/AddPost';
+import Home from '../components/Home';
+import EditPost from '../components/EditPost';
+import Nav from './Nav';
 function App() {
     return (
         <>
 
-            <div className="App">
-                <h1>Welcome to React Router!</h1>
+            <Router>
+                <Nav />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/posts" element={<Posts />} />
+                    <Route path="/add-post" element={<AddPost />} />
+                    <Route path="edit-post" element={<EditPost />} />
                 </Routes>
-            </div>
+
+            </Router>
 
         </>
     );
